@@ -17,7 +17,7 @@ import java.util.List;
 public class TestProductCategory {
     @Test
     public void testProductCategory(){
-       // IProduvtCategory produvtCategory=new ProductCategoryimpl();
+
         IProductCategory productCategory=new ProductCategoryImpl();
         List<easybuy_product_category> product_categories = productCategory.queryAllProductCategory("0");
         for (easybuy_product_category category:product_categories){
