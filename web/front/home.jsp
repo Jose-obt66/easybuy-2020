@@ -458,6 +458,9 @@
         <!--End 商品分类详情 End-->
         <ul class="menu_r">
             <li><a href="Index.html">首页</a></li>
+            <c:forEach items="${categoryList}" var="list">
+                <li><a href="">${list.name}</a></li>
+            </c:forEach>
             <li><a href="Food.html">美食</a></li>
             <li><a href="Fresh.html">生鲜</a></li>
             <li><a href="HomeDecoration.html">家居</a></li>
