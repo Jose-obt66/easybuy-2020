@@ -12,4 +12,5 @@ import java.sql.SQLException;
  */
 public interface IUserService {
     easybuy_user getUserByName(String loginName) throws SQLException;
+    boolean save(easybuy_user user);
 }

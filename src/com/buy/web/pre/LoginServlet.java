@@ -31,13 +31,15 @@ public class LoginServlet extends HttpServlet{
     }
     //实例化servlet
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            login(  request,response);
-        } catch (SQLException e) {
-            e.printStackTrace();
+        String opr=request.getParameter("opr");
+        if (opr.equals("logOut")){
+            try {
+                logOut(request,response);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -78,4 +80,13 @@ public class LoginServlet extends HttpServlet{
     }
 
 
+    //用户注销
+    public void logOut(HttpServletRequest request,HttpServletResponse response) throws SQLException, IOException {
+
+        //删除session中用户的登录
+        request.getSession().removeAttribute("loginUser");
+        response.sendRedirect(request.getContextPath()+"/front/home.jsp");
+
+
+    }
 }

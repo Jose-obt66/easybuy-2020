@@ -11,6 +11,9 @@ import java.sql.SQLException;
  * @Modified By:
  */
 public interface IUser {
+    //µÇÂ¼
     easybuy_user getUserByloginByName(String loginName) throws SQLException;
+    //×¢²á
+    int save(easybuy_user user);
 }
 

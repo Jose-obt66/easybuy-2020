@@ -18,4 +18,10 @@ public class UserServiceImpl implements IUserService{
     public easybuy_user getUserByName(String loginName) throws SQLException {
         return uDao.getUserByloginByName(loginName);
     }
+
+    @Override
+    public boolean save(easybuy_user user) {
+
+        return uDao.save(user)>0?true:false;
+    }
 }
